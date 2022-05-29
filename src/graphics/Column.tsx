@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 
 interface Props {
   up?: boolean;
+  full?: boolean;
   right?: boolean;
   wrap?: boolean;
   down?: boolean;
@@ -24,6 +25,7 @@ export default Column;
 
 const StyledColumn = styled.div`
    display: flex;
+   flex-direction: column;
    align-items: center;
   ${(props: Props) =>
     props.center &&
@@ -31,12 +33,12 @@ const StyledColumn = styled.div`
       justify-content: center;
     `};
   ${(props: Props) =>
-    props.left &&
+    props.up &&
     css`
       justify-content: flex-start;
     `}; 
   ${(props: Props) =>
-    props.right &&
+    props.down &&
     css`
       justify-content: flex-end;
     `};  
@@ -62,12 +64,18 @@ const StyledColumn = styled.div`
        height: 100%;
     `};
   ${(props: Props) =>
-    props.up &&
+    props.full &&
+    css`
+       width: 100%;
+       height: 100vh;
+    `};  
+  ${(props: Props) =>
+    props.left &&
     css`
        align-items: flex-start;
     `};  
   ${(props: Props) =>
-    props.down &&
+    props.right &&
     css`
        align-items: flex-end;
     `};    

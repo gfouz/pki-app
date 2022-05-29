@@ -1,6 +1,9 @@
 import * as React from 'react';
 import Nav from "../../components/Nav";
 import Box from "../../components/Box";
+import Column from "../../graphics/Column";
+import Request from '../../forms/Request'
+
 
 
 const navbar:object = {
@@ -13,9 +16,9 @@ function Consultas() {
 	<>	
     <Nav {...navbar} />	
     <Box column height="100vh">
-      <h1 style={{color:"#82fa02"}}>
-         Consultas
-      </h1>
+     <Column  spread center>
+       <Request />
+     </Column>  
     </Box>
   </> 
 		);

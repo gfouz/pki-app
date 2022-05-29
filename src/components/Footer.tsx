@@ -3,11 +3,11 @@ import styled, { css } from "styled-components";
 
 interface Props {
   bg?: string;
-  color?: string;
+  c?: string;
   itemOne?: string;
   itemTwo?: string;
-  height?: string;
-  padding?: string;
+  h?: string;
+  p?: string;
   simple?: string;
   align?: string;
   children?: React.ReactNode;
@@ -25,14 +25,14 @@ export default Footer;
 const StyledFooter = styled.footer`
   position: relative;
   width: 100%;
-  height: ${(props: Props) => props.height};
-  padding: ${(props: Props)=> props.padding || "0"};
-  color: ${(props: Props) => props.color};
+  height: ${(props: Props) => props.h};
+  padding: ${(props: Props)=> props.p};
+  color: ${(props: Props) => props.c};
   background-color: ${(props: Props) => props.bg};
   ${(props: Props) =>
     props.simple &&
     css`
-      --full-height: ${(props: Props) => props.height}
+      --full-height: ${(props: Props) => props.h};
       width: 100%;
       position: relative;
       height: var(--full-height);

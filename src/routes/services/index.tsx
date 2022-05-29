@@ -1,21 +1,22 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import Nav from "../../components/Nav";
-import Row from "../../graphics/Row";
-import Column from "../../graphics/Column";
+import Footer from "../../components/Footer";
+import RequestModel from '../../forms/Request';
 
 function Services() {
 	return(
     <>
      <StyledService>		
-       <Nav  padding="2em" /> 
-       <Column  spread center>
-       <Row evenly wrap>
-        <h1>Services</h1>
-        <h1>Services</h1>
-        <h1>Services</h1>
-       </Row> 
-      </Column>
+       <div className="request">
+          <Nav  padding="1em" color="#ffffff" bg="#555555"/> 
+          <RequestModel />
+          <Footer simple bg="#444444" p="1em" c="#ffffff"> 
+            <h3>
+               Seguridad informática {new Date().getFullYear()}
+            </h3>
+          </Footer>
+       </div>
      </StyledService> 
     </>  
     );
@@ -25,14 +26,17 @@ export default Services;
 
 const StyledService = styled.div`
 width: 100%;
-height: 100vh;
 min-height: 100vh;
-background-color: brown;
 h1{
   padding: 0 0.2em;
 }
-.container {
-  background-color: lightblue;
-  height: 600px;
+.request {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
 }
 `;
